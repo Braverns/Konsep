@@ -32,4 +32,4 @@ def kebijakan_pajak():
         sys.stdout.flush()
         time.sleep(0.5)
 
-    
+print('hi')
