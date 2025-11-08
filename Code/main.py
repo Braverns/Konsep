@@ -1,28 +1,24 @@
 from data import *
 from login import *
+from menu import *
+from InquirerPy import inquirer
 
 def main_menu():
     while True:
-        print('\n=== MENU UTAMA ===')
-        print('1. Login Admin')
-        print('2. Login User')
-        print('3. Daftar User')
-        print('4. Keluar')
-        choice = input('Pilih: ').strip()
-        if choice == '1':
-            admin_username = login('admin')
-            if admin_username:
-                print('op')
-        elif choice == '2':
-            username = login('user')
-            if username:
-                print('po')
-        elif choice == '3':
+        choice = menu()
+        os.system('cls || clear')
+
+        if choice == f"|{'1. Master':<{105}}|":
+            login('admin')
+            input('Enter untuk kembali... ')
+        elif choice == f"|{'2. Murid':<{105}}|":
+            login('user')
+            input('Enter untuk kembali... ')
+        elif choice == f"|{'3. Daftar Sebagai Murid':<{105}}|":
             register_user()
-        elif choice == '4':
-            print('Keluar program.')
-            break
+            input('Enter untuk kembali... ')
         else:
-            print('Pilihan tidak valid.')
+            print('Goodbye')
+            break
 
 main_menu()

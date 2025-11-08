@@ -2,7 +2,6 @@ from data import *
 from login import *
 
 def login(x):
-    while True:
         username = input('Admin Username: ').strip()
         password = input('Password: ').strip()
         user = users_db.get(username)
@@ -24,7 +23,7 @@ def register_user():
 
         password = input('Password baru: ').strip()
         if not password or ' ' in password or username == password or password.isdigit() or len(password) < 8 or len(password) > 64:
-            print('Password tidak boleh kosong.')
+            print('\n1. Password tidak boleh kosong\n2. Password tidak boleh ada spasi \n3. Password tidak boleh sama dengan username \n4. Password harus ada huruf \n5. Password minimal 8 karakter dan maksimal 64 karakter\n')
             continue
         confirm = input('Ulangi password: ').strip()
         if password != confirm:
